@@ -1,18 +1,9 @@
-choice
-        prompt "DDR Size"
-	default SYS_DDR_2G
-
 config SYS_DDR_1G
 	bool "1GiB"
 
 config SYS_DDR_2G
 	bool "2GiB"
 
-endchoice
-
-config IMX_CONFIG
-	default "board/advantech/dms-ba16/ddr_2g.cfg" if SYS_DDR_2G
-	default "board/advantech/dms-ba16/ddr_1g.cfg" if SYS_DDR_1G
 
 config SYS_BOARD
 	default "dms-ba16"
@@ -24,4 +15,9 @@ config SYS_SOC
 	default "mx6"
 
 config SYS_CONFIG_NAME
+	string "Board configuration name"
 	default "advantech_dms-ba16"
+	help
+	  This option contains information about board configuration name.
+	  Based on this option include/configs/<CONFIG_SYS_CONFIG_NAME>.h header
+	  will be used for board configuration.

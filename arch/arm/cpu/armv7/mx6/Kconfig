@@ -37,7 +37,7 @@ choice
 
 config TARGET_ADVANTECH_DMS_BA16
 	bool "Advantech dms-ba16"
-	select MX6Q
+
 
 config TARGET_ARISTAINETOS
 	bool "aristainetos"
